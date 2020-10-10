@@ -1,14 +1,26 @@
 {
-  "name": "peace-date-server",
+  "name": "peace-data-server",
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon -r esm index.js",
-    "prettier": "npx prettier --write --end-of-line=auto --trailing-comma=none ."
+    "prettier": "npx prettier --write --end-of-line=auto --trailing-comma=none .",
+    "generate-self-signed-certificate": "openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -nodes -keyout example.key -out example.crt -subj \"/CN=peace.data\" -addext \"subjectAltName=DNS:api.peace.data,DNS:peace.data,IP:127.0.0.1\""
   },
   "dependencies": {
+    "body-parser": "1.19.0",
+    "connect-ensure-login": "0.1.1",
+    "connect-flash": "0.1.1",
+    "cookie-parser": "1.4.5",
+    "cors": "2.8.5",
+    "ejs-locals": "^1.0.2",
     "esm": "3.2.25",
     "express": "4.17.1",
-    "cors": "2.8.5"
+    "express-session": "1.17.1",
+    "jsonwebtoken": "8.5.1",
+    "passport": "0.4.1",
+    "passport-local": "1.0.0",
+    "passport-totp": "0.0.2",
+    "thirty-two": "1.0.2"
   },
   "devDependencies": {
     "prettier": "2.1.2",
