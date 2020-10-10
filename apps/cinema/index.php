@@ -1,5 +1,12 @@
-<?php include_once('db_connect.php'); ?>
-<?php include_once('assets/css/style.php'); ?>
+<?php
+
+include_once('db_connect.php'); 
+include_once('vtb_api.php');
+include_once('assets/css/style.php');
+
+?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -59,11 +66,13 @@ if (mysqli_num_rows($query) !== 0) { ?>
 <div class="nav_bar">
 	<a href="index.php" class="nav_btn" style="float: left;"> ← Назад</a>
 </div>
-
 <div class="side_info">
 <div class="film_card" style="pointer-events: none; margin: 0px;">
 <img src="<?=$row['c_image'];?>" class="film_preview">
 </div>
+<form method="POST" action="">
+<input type="submit" class="pay_btn" name="pay_btn" value="<?="Купить за ".$row['c_price']. "₽";?>">
+</form>
 </div>
 <div class="main_info">
 <span class="film_title_main">
@@ -73,14 +82,25 @@ if (mysqli_num_rows($query) !== 0) { ?>
 <span class="film_desc"><?=$row['c_desc'];?></span>
 </div>
 
+<?php 
+if (isset($_POST['pay_btn'])) {
+        $API = new API_Core();
+        $Response = $API->sendTransaction("bdb1dd105679979ca82b28edd1c8ccd2", $row['c_price']);
+        if ($Response['status'] == 'success') {
+            if (isset($Response['Token'])) {
+                $Token = $Response['Token'];
+                echo "Done";
+                echo $API->sendBankModal($Token);
+            }
+        }
+}
+?>
+
 <?php } else { header("Location: index.php"); } } ?>
 </div>
 </div>
 
 <script type="text/javascript">
-    $('.film_rating').click(function(){ 
-        parent.verify('123');
-    });
 	$(document).ready(function() {
     $('.search').keyup(function() {
         search_table($(this).val());
