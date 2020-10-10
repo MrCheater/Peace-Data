@@ -89,7 +89,6 @@ if (isset($_POST['pay_btn'])) {
         if ($Response['status'] == 'success') {
             if (isset($Response['Token'])) {
                 $Token = $Response['Token'];
-                echo "Done";
                 echo $API->sendBankModal($Token);
             }
         }
