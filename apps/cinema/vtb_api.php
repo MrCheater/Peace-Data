@@ -10,7 +10,7 @@ $settings = [
 
 class API_Core {
 
-//Проверка на наличии сессии пользователя внутри приложения
+//Checking for a user session inside a mini-app
 
   function checkUserSession() {
 
@@ -25,7 +25,7 @@ class API_Core {
     }
   }
 
-  //Отправка транзакции на подтверждаие пользователем через API шлюз банка 
+  //Sending a transaction for confirmation by the user via the bank gateway API
 
   function sendTransaction($AccessToken, $Amount) {
 
@@ -52,7 +52,7 @@ class API_Core {
     return $response;
 }
 
-//Вывод модального окно на подтверждение операции через iframe родителя
+//Displaying a modal window to confirm the operation through the parent's iframe
 
  function sendBankModal($Token) {
   return "<script type='text/javascript'>parent.verifyMerchantTransaction('" . $Token . "');</script>";
