@@ -17,6 +17,7 @@ httpsServer.listen(443, 'api.peace.data', () => {
 
 #### Two-factor authentication + QR code for scanning into Google Authenticator
 ![Passport-TOTP-Example](https://user-images.githubusercontent.com/5055654/95653175-41189380-0aff-11eb-9e73-df4a0c6874bc.png)
+
 ![Passport-TOTP-Example (1)](https://user-images.githubusercontent.com/5055654/95653176-4249c080-0aff-11eb-9155-8a2879d8fa9f.png)
 
 #### Secure Session
