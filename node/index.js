@@ -172,7 +172,7 @@ function ensureSecondFactor(req, res, next) {
 
 if(debug) {
   const httpServer = http.createServer(app);
-  httpServer.listen(3001, 'api.peace.data', () => {
+  httpServer.listen(3001, 'localhost', () => {
     const { address, port } = httpServer.address()
     console.log(`HTTP Server running on port http://${address}:${port}`);
   });
