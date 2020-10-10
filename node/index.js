@@ -3,14 +3,15 @@ import path from "path";
 import http from "http";
 import https from "https";
 import cors from "cors";
-import express from 'express'
-import passport from 'passport'
+import express from "express";
+import passport from "passport";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import flash from 'connect-flash'
-import loggedin from 'connect-ensure-login'
-import base32 from 'thirty-two'
+import flash from "connect-flash";
+import loggedin from "connect-ensure-login";
+import base32 from "thirty-two";
+import rateLimit from "express-rate-limit";
 
 import { Strategy as LocalStrategy } from 'passport-local'
 import { Strategy as TotpStrategy } from 'passport-totp'
@@ -88,6 +89,12 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Rate Limiting
+app.use(rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
+}));
 
 app.get('/', function(req, res){
   res.render('index', { user: req.user });

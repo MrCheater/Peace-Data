@@ -22,6 +22,7 @@ httpsServer.listen(443, 'api.peace.data', () => {
 
 #### Secure Session
 ```js
+// Send session cookie only over HTTPS
 app.use(session({
     secret: sessionSecret,
     name: 'SessionID',
@@ -36,9 +37,18 @@ app.use(session({
 
 #### Whitelist Cors 
 ```js
+// For https://api.peace.data:443/
 app.use(cors({
     origin: 'https://peace.data:443/',
     optionsSuccessStatus: 204
+}));
+```
+
+#### Rate Limiting
+```js
+app.use(rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // limit each IP to 100 requests per windowMs
 }));
 ```
 
