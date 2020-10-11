@@ -1,11 +1,11 @@
 # Peace-Data
 #### VTB hackathon team
 
-###### mini-app
+##### Mini-app
 ![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/mini-app.png?raw=true)
-###### navigation
+##### Navigation
 ![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/navigation.png?raw=true)
-###### services
+##### Services
 ![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/services.png?raw=true)
 
 ## Security Features
