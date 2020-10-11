@@ -79,6 +79,11 @@ A complete JWT will be look like this
 To identify how JWT works lets consider there is a authentication server, Application server and a user.
 ```
 
+#### Machine Learning
+1. DBSCAN - Density-based spatial clustering of applications with noise (DBSCAN) is a data clustering algorithm. It is a density-based clustering non-parametric algorithm: given a set of points in some space, it groups together points that are closely packed together (points with many nearby neighbors), marking as outliers points that lie alone in low-density regions (whose nearest neighbors are too far away). 
+
+2. Random forests or random decision forests are an ensemble learning method for classification, regression and other tasks that operate by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean/average prediction (regression) of the individual trees.
+
 #### 
 
 ## :rocket: Getting Started
