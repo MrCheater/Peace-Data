@@ -3,8 +3,6 @@
 
 ##### Services
 ![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/services.png?raw=true)
-##### Mini-app
-![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/mini-app.png?raw=true)
 ##### Navigation
 ![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/navigation.png?raw=true)
 
