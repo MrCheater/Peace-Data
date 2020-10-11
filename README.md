@@ -1,6 +1,13 @@
 # Peace-Data
 #### VTB hackathon team
 
+###### mini-app
+![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/mini-app.png?raw=true)
+###### navigation
+![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/navigation.png?raw=true)
+###### services
+![](https://github.com/Peace-Data/Peace-Data/blob/main/MVP/Demonstration/services.png?raw=true)
+
 ## Security Features
 #### SSL Certificate
 ![SSL Certificate](https://user-images.githubusercontent.com/5055654/95653059-5f31c400-0afe-11eb-8519-3bd99940ca86.png)
