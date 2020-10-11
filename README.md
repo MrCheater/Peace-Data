@@ -52,27 +52,9 @@ app.use(rateLimit({
 }));
 ```
 
-#### JWT + Asymmetric Encryption based on RS256
-A public key and a private key will be used to encrypt and decrypt the JWT by the authentication server and application server.
+#### ML Analitics
 
-If the application server registered with the asymmetric encryption, The public key will be given to the application server to use as the decryption key while authentication server will use the private key for the encryption.
 
-`data=base64urlEncode(header)+”.”+base64urlEncode(payload);`
-
-`hashedData=hash(data,secret);`
-
-`signature=base64urlEncode(hashedData);`
-
-Then we encode the Header, Payload and the signature separately in base 64 and combine them with “.”.
-```
-Header:-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
-Payload:-eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ
-Signature:- -xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM
-```
-A complete JWT will be look like this
-``` eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ.-xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM
-To identify how JWT works lets consider there is a authentication server, Application server and a user.
-```
 
 #### 
 
