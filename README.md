@@ -2,16 +2,16 @@
 #### VTB hackathon team
 
 ## Security Features
-#### SSL Certificate 
+#### SSL Certificate
 ![SSL Certificate](https://user-images.githubusercontent.com/5055654/95653059-5f31c400-0afe-11eb-8519-3bd99940ca86.png)
 ```js
 const httpsServer = https.createServer({
-    key: fs.readFileSync(path.join(__dirname, '..', 'peace.data.key')),
-    cert: fs.readFileSync(path.join(__dirname, '..', 'peace.data.crt')),
+  key: fs.readFileSync(path.join(__dirname, '..', 'peace.data.key')),
+  cert: fs.readFileSync(path.join(__dirname, '..', 'peace.data.crt')),
 }, app);
 
 httpsServer.listen(443, 'api.peace.data', () => {
-    console.log(`HTTPS Server running on port https://api.peace.data`);
+  console.log(`HTTPS Server running on port https://api.peace.data`);
 });
 ```
 
@@ -24,31 +24,31 @@ httpsServer.listen(443, 'api.peace.data', () => {
 ```js
 // Send session cookie only over HTTPS
 app.use(session({
-    secret: sessionSecret,
-    name: 'SessionID',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        secure: debug ? false : true,
-        httpOnly: true,
-    }
+  secret: sessionSecret,
+  name: 'SessionID',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: debug ? false : true,
+    httpOnly: true,
+  }
 }));
 ```
 
-#### Whitelist Cors 
+#### Whitelist Cors
 ```js
 // For https://api.peace.data:443/
 app.use(cors({
-    origin: 'https://peace.data:443/',
-    optionsSuccessStatus: 204
+  origin: 'https://peace.data:443/',
+  optionsSuccessStatus: 204
 }));
 ```
 
 #### Rate Limiting
 ```js
 app.use(rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100 // limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
 }));
 ```
 
@@ -103,4 +103,3 @@ python3 -m http.server 3002
 ## Requirements
 * Node.js 12.18.4 https://nodejs.org/en/download/
 * Python 3.x https://www.python.org/downloads/
-
